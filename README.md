@@ -1,30 +1,47 @@
 # vim-setup
 my vim setup for development
 
+Turn of old regular expression to avoid TypeScript syntax highlighting
+```
 set re=0
 set ar
+```
 
-" Set internal encoding of vim, not needed on neovim, since coc.nvim using some
-" unicode characters in the file autoload/float.vim
+Set internal encoding of vim, not needed on neovim, since coc.nvim using some
+unicode characters in the file autoload/float.vim
+```
 set encoding=utf-8
+```
 
-" TextEdit might fail if hidden is not set.
+TextEdit might fail if hidden is not set.
+```
 set hidden
+```
 
-" Some servers have issues with backup files, see #649.
+Some servers have issues with backup files, see #649.
+```
 set nobackup
 set nowritebackup
+```
 
-" Give more space for displaying messages.
+Give more space for displaying messages.
+```
 set cmdheight=2
+```
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
+Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+delays and poor user experience.
+```
 set updatetime=300
+```
 
-" Don't pass messages to |ins-completion-menu|.
+Don't pass messages to |ins-completion-menu|.
+```
 set shortmess+=c
+```
 
+Call the all plugins inside <strong>call plug#begin() & call plug#end()</strong>
+```
 call plug#begin()
 
 " NERDTree configs
@@ -62,11 +79,13 @@ let g:coc_global_extensions = ['coc-tsserver']
 Plug 'sheerun/vim-polyglot'
 
 call plug#end()
+```
 
-" Prettier configs
+Prettier configs
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+```
 vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-
+```
 " map FZF to gf
 nnoremap <silent> gf :FZF<CR>
