@@ -1,1 +1,1 @@
-My vim development setup
+My vim setup for development
