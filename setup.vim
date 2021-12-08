@@ -72,6 +72,11 @@ nmap <leader>f  <Plug>(coc-format-selected)
 " map FZF to gf
 nnoremap <silent> gf :FZF<CR>
 
-highlight CocErrorFloat ctermfg=White guifg=#ffffff
-
 let g:fzf_layout = { 'up': '~10%' }
+
+" Error, Warning text color custom specs and highlight the word under cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+highlight CocWarningFloat ctermfg=black guifg=black
+highlight CocErrorFloat ctermfg=black guifg=black
+highlight CocInfoFloat ctermfg=black guifg=black
+highlight CocHintFloat ctermfg=black guifg=black
